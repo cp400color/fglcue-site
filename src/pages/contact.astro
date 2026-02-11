@@ -32,10 +32,10 @@ import ClueLogo from "../assets/logobl.png";
           Any messages about services regarding "SEO Improval Services" will be deleted.
         </p>
         <form
-          data-netlify-recaptcha="true"
-          data-netlify="true"
           method="POST"
           class="flex flex-col mt-4"
+          data-netlify-recaptcha="true"
+          data-netlify="true"
         >
           <h2 class="text-lg">
             Name <span class="text-gray-600">required</span>
@@ -65,7 +65,10 @@ import ClueLogo from "../assets/logobl.png";
 
           <p class="hidden">
             <label>
-              Don't fill this out if you're an human: <input name="bot-field" type="text" />
+              Don't fill this out if you're an human: <input
+                name="bot-field"
+                type="text"
+              />
             </label>
           </p>
 
@@ -76,7 +79,9 @@ import ClueLogo from "../assets/logobl.png";
             style="display: none;"
           />
 
-          <div class="flex flex-col justify-center border px-4 items-center py-2 bg-gray-100 border-gray-200 rounded-md mt-2 gap-2">
+          <div
+            class="flex flex-col justify-center border px-4 items-center py-2 bg-gray-100 border-gray-200 rounded-md mt-2 gap-2"
+          >
             Please enjoy all CAPTCHAs equally.
             <div data-netlify-recaptcha="true"></div>
           </div>
@@ -84,7 +89,8 @@ import ClueLogo from "../assets/logobl.png";
           <button
             type="submit"
             class="cursor-pointer bg-green-700 mx-8 py-2 rounded-md border border-green-800 text-white text-xl border-b-2 my-4"
-            >Submit</button>
+            >Submit</button
+          >
 
           <p class="text-center">
             After you complete the CAPTCHA, your e-mail client should open.
