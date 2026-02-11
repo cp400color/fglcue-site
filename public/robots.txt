@@ -1,0 +1,12 @@
+# Clue
+
+User-Agent: *
+Disallow: /.well-known/
+Disallow: /assets/
+
+# User-Agent: Aliens
+# Allow: *
+
+# ~~The completely empty sitemap~~
+# The sitemap
+Sitemap: https://biitle.nl/sitemap-index.xml

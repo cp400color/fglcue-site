@@ -1,0 +1,29 @@
+---
+import Meta from "../components/Meta.astro";
+import "../main.css";
+
+import BiitleLogo from "../assets/logobl.png"
+
+const {
+  title = "Clue",
+  description = "Clue's Homepage",
+  metaTitle = "Clue",
+  url = "https://fgclue.nl",
+  css
+} = Astro.props;
+---
+
+<html lang="en" class="scroll-smooth pb-4" style={css}>
+  <head>
+    <meta charset="UTF-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <Meta title={title} description={description} metaTitle={metaTitle} url={url} />
+
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="shortcut icon" href={BiitleLogo.src} type="image/x-icon" />
+  </head>
+  <body class="scroll-smooth flex flex-col justify-center items-center px-2">
+    <slot />
+  </body>
+</html>
