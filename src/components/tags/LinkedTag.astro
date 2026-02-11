@@ -1,0 +1,9 @@
+---
+import Tag from "../Tag.astro";
+
+const { text, url = "" } = Astro.props;
+---
+
+<a href={url}>
+  <Tag text={text} />
+</a>

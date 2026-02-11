@@ -4,8 +4,16 @@ import Footer from "../components/Footer.astro";
 import Navbar from "../components/nav/Navbar.astro";
 import Layout from "../layout/Layout.astro";
 
+import JotLogo from "../assets/logos/jot.svg";
+import PodnativeLogo from "../assets/logos/podnative.svg";
+import OutclockLogo from "../assets/logos/outclock.png";
+import StorekitLogo from "../assets/logos/storekit.png";
+
 import ClueLogo from "../assets/logobl.png";
 import Tag from "../components/Tag.astro";
+import LinkedImageTag from "../components/tags/LinkedImageTag.astro";
+import ProjectBar from "../components/tags/ProjectBar.astro";
+import ImageTag from "../components/tags/ImageTag.astro";
 ---
 
 <Layout>
@@ -25,8 +33,8 @@ import Tag from "../components/Tag.astro";
       <div>
         <h1 class="text-2xl">Clue</h1>
         <p>
-          I am a full-stack developer based in Brazil. Right now, I am working on
-          developing software for my business biitle.nl. I've been developing
+          I am a full-stack developer based in Brazil. Right now, I am working
+          on developing software for my business biitle.nl. I've been developing
           software since around 2024.
         </p>
         <p class="text-gray-900 text-sm">Timezone: GMT-3 · Brasília Time</p>
@@ -57,10 +65,37 @@ import Tag from "../components/Tag.astro";
 
     <div>
       <h1 class="text-2xl">Projects</h1>
-      <p class="flex flex-col">
-        <span>Apps: <Tag text="Podnative" /> <Tag text="Jot" /></span>
-        <span>Desktop: <Tag text="Storekit" /></span>
-        <span>Web: <Tag text="Outclock" /></span>
+      <p class="flex flex-col gap-px">
+        <ProjectBar
+          >Apps: <LinkedImageTag
+            text="Podnative"
+            url="https://biitle.nl/apps/podnative/"
+            img={PodnativeLogo}
+            alt="Podnative Logo"
+          />
+          <ImageTag
+            text="Jot"
+            url="https://biitle.nl/apps/jot/"
+            img={JotLogo}
+            alt="Jot Logo"
+          /></ProjectBar
+        >
+        <ProjectBar
+          >Desktop: <LinkedImageTag
+            text="Storekit"
+            url="https://github.com/fgclue/storekit"
+            img={StorekitLogo}
+            alt="Storekit Logo"
+          />
+        </ProjectBar>
+        <ProjectBar class="flex gap-1"
+          >Web: <LinkedImageTag
+            text="Outclock"
+            url="https://outclock.xyz"
+            img={OutclockLogo}
+            alt="Outclock Logo"
+          /></ProjectBar
+        >
       </p>
     </div>
   </main>
