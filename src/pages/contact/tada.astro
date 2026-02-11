@@ -1,0 +1,37 @@
+---
+import { Image } from "astro:assets";
+import Footer from "../../components/Footer.astro";
+import Navbar from "../../components/nav/Navbar.astro";
+import Layout from "../../layout/Layout.astro";
+
+import ClueLogo from "../../assets/logobl.png";
+---
+
+<Layout
+  title="Message recieved · Clue"
+  description="Contact me using this page"
+  metaTitle="Contact Clue"
+  noindex=true
+>
+  <Navbar />
+  <main class="2xl:w-2xl gap-4 flex flex-col px-2">
+    <div class="flex flex-col gap-8">
+      <div>
+        <Image
+          src={ClueLogo}
+          alt="Clue"
+          class="border-2 border-gray-300 aspect-square w-24 h-24"
+          loading="eager"
+        />
+      </div>
+      <div>
+        <h1 class="text-2xl">Message recieved!</h1>
+        <p>
+          If your message is interesting I will respond soon.<br>
+          Please note that I delete all spam so if you sent me something related to "SEO improval services" I will not read it.
+        </p>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

@@ -9,6 +9,7 @@ const {
   description = "Clue's Homepage",
   metaTitle = "Clue",
   url = "https://fgclue.nl",
+  noindex = false,
   css
 } = Astro.props;
 ---
@@ -19,7 +20,7 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <Meta title={title} description={description} metaTitle={metaTitle} url={url} />
-
+    {noindex && <meta name="robots" content="noindex">}
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="shortcut icon" href={BiitleLogo.src} type="image/x-icon" />
   </head>

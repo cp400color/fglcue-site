@@ -1,10 +1,10 @@
 ---
 import { Image } from "astro:assets";
-import Footer from "../components/Footer.astro";
-import Navbar from "../components/nav/Navbar.astro";
-import Layout from "../layout/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import Navbar from "../../components/nav/Navbar.astro";
+import Layout from "../../layout/Layout.astro";
 
-import ClueLogo from "../assets/logobl.png";
+import ClueLogo from "../../assets/logobl.png";
 ---
 
 <Layout
@@ -34,6 +34,7 @@ import ClueLogo from "../assets/logobl.png";
         <form
           method="POST"
           class="flex flex-col mt-4"
+          action="/contact/tada"
           data-netlify-recaptcha="true"
           data-netlify="true"
         >
@@ -61,7 +62,7 @@ import ClueLogo from "../assets/logobl.png";
           <h2 class="text-lg">
             Message <span class="text-gray-600">required</span>
           </h2>
-          <textarea name="message" class="min-h-[11.5rem]" placeholder="Step 1: Break the DNS Service
+          <textarea name="message" class="min-h-46" placeholder="Step 1: Break the DNS Service
 Step 2: Enjoy the broken web
 Step 3: ???
 Step 4: Profit
