@@ -1,0 +1,94 @@
+---
+import { Image } from "astro:assets";
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/nav/Navbar.astro";
+import Layout from "../layout/Layout.astro";
+
+import ClueLogo from "../assets/logobl.png";
+---
+
+<Layout
+  title="Contact · Clue"
+  description="Contact me using this page"
+  metaTitle="Contact Clue"
+>
+  <Navbar />
+  <main class="2xl:w-2xl gap-4 flex flex-col px-2">
+    <div class="flex flex-col gap-8">
+      <div>
+        <Image
+          src={ClueLogo}
+          alt="Clue"
+          class="border-2 border-gray-300 aspect-square w-24 h-24"
+          loading="eager"
+        />
+      </div>
+      <div>
+        <h1 class="text-2xl">Contact</h1>
+        <p>
+          If you want to get in touch, please do so here. <br />
+          Please note that I am one person. Please try to keep your message short.
+          <br />
+          Any messages about services regarding "SEO Improval Services" will be deleted.
+        </p>
+        <form
+          data-netlify-recaptcha="true"
+          data-netlify="true"
+          method="POST"
+          class="flex flex-col mt-4"
+        >
+          <h2 class="text-lg">
+            Name <span class="text-gray-600">required</span>
+          </h2>
+          <input type="text" name="name" placeholder="Name" required />
+          <h2 class="text-lg">
+            E-mail <span class="text-gray-600">required</span>
+          </h2>
+          <input
+            type="email"
+            name="email"
+            placeholder="aliens@biitle.nl"
+            required
+          />
+          <h2 class="text-lg">
+            Subject <span class="text-gray-600">required</span>
+          </h2>
+          <input
+            type="text"
+            name="subject"
+            placeholder="Plans to destroy US-East-1"
+          />
+          <h2 class="text-lg">
+            Message <span class="text-gray-600">required</span>
+          </h2>
+          <textarea name="message" placeholder="Message" required></textarea>
+
+          <p class="hidden">
+            <label>
+              Don't fill this out if you're an human: <input name="bot-field" type="text" />
+            </label>
+          </p>
+
+          <input
+            type="checkbox"
+            name="botcheck"
+            class="hidden"
+            style="display: none;"
+          />
+
+          <div data-netlify-recaptcha="true"></div>
+
+          <button
+            type="submit"
+            class="cursor-pointer bg-green-700 mx-8 py-2 rounded-md border border-green-800 text-white text-xl border-b-2 my-4"
+            >Submit</button>
+
+          <p class="text-center">
+            After you complete the CAPTCHA, your e-mail client should open.
+          </p>
+        </form>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
