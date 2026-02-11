@@ -1,0 +1,66 @@
+---
+import { Image } from "astro:assets";
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/nav/Navbar.astro";
+import Layout from "../layout/Layout.astro";
+
+import ClueLogo from "../assets/logobl.png";
+import Tag from "../components/Tag.astro";
+---
+
+<Layout>
+  <Navbar />
+  <main class="2xl:w-2xl gap-4 flex flex-col px-2">
+    <div class="flex flex-col gap-8">
+      <div>
+        <Image
+          src={ClueLogo}
+          alt="Clue"
+          class="border-2 border-gray-300 aspect-square w-24 h-24"
+          loading="eager"
+        />
+      </div>
+      <div>
+        <h1 class="text-2xl">Clue</h1>
+        <p>
+          I am a full-stack developer based in Brazil. Right now, I am working on
+          developing software for my business biitle.nl. I've been developing
+          software since around 2024.
+        </p>
+        <p class="text-gray-900 text-sm">Timezone: GMT-3 · Brasília Time</p>
+      </div>
+    </div>
+
+    <div id="portfolio"></div>
+
+    <div>
+      <h1 class="text-2xl">Skills</h1>
+      <p>
+        I am familiar with <Tag text="Python" />, <Tag text="Rust" /> and <Tag
+          text="Kotlin"
+        />. Regarding the web, I am familiar with <Tag text="HTML" />, <Tag
+          text="JavaScript"
+        /> and <Tag text="TypeScript" />,
+        <Tag text="CSS" /> and JSX-like frameworks such as <Tag text="React" /> and
+        <Tag text="Astro" />.
+      </p>
+      <p>
+        I also know how to use tools like <Tag text="Docker" />, <Tag
+          text="Vite"
+        />, <Tag text="Figma" />, <Tag text="Git" /> and <Tag
+          text="Insomnia REST"
+        />.
+      </p>
+    </div>
+
+    <div>
+      <h1 class="text-2xl">Projects</h1>
+      <p class="flex flex-col">
+        <span>Apps: <Tag text="Podnative" /> <Tag text="Jot" /></span>
+        <span>Desktop: <Tag text="Storekit" /></span>
+        <span>Web: <Tag text="Outclock" /></span>
+      </p>
+    </div>
+  </main>
+  <Footer />
+</Layout>
