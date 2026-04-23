@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+article {
+    h1 {
+        @apply text-3xl leading-10
+    }
+    h2 {
+        @apply text-2xl leading-8
+    }
+    h3 {
+        @apply text-xl leading-7.5
+    }
+    h4 {
+        @apply text-lg leading-7 font-medium
+    }
+    h5 {
+        @apply text-base leading-6.5 font-semibold
+    }
+    h6 {
+        @apply text-sm leading-6 font-bold
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply mt-3 mb-2
+    }
+
+    hr {
+        @apply border-gray-200 border-[1.5px] my-2
+    }
+    pre {
+        @apply m-4
+    }
+    blockquote {
+        @apply border-l-2 my-2 mx-2 px-4 py-1 border-gray-400
+    }
+    
+    a {
+        @apply underline text-blue-700 font-mono
+    }
+}
