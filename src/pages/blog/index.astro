@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+import Footer from "../../components/Footer.astro";
+import Navbar from "../../components/nav/Navbar.astro";
+import Layout from "../../layout/Layout.astro";
+import ClueLogo from "../../assets/logobl.png";
+
+const dateOptions: object = {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
+const allPosts = Object.values(import.meta.glob("./*.md", { eager: true }));
+allPosts.sort((a: any, b: any) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
+---
+
+<Layout title="Blog · Clue", description="New posts every second", metaTitle="Clue's Blog">
+  <Navbar />
+  <main class="md:w-2xl gap-4 flex flex-col">
+    <div class="flex flex-col gap-8">
+      <div class="px-2 my-0 py-0">
+        <Image
+          src={ClueLogo}
+          alt="Clue Logo. Pixelated mirrored lower case T with missing bottom pixel."
+          class="border-2 border-gray-300 aspect-square w-24 h-24 mb-4"
+          loading="eager"
+          width="144"
+          height="144"
+        />
+      </div>
+      <div class="px-2 my-0">
+        <h1 class="text-2xl">Clue's Blog</h1>
+        <p>New posts every second</p>
+      </div>
+      <ol class="gap-1 py-0 my-0">
+        {
+          allPosts.map((post: any) => (
+            <li class="flex flex-row gap-2 px-2 py-1 hover:bg-gray-50">
+              <a href={post.url} class="flex gap-2">
+                <p>{post.frontmatter.title}</p>
+                <p class="text-gray-600">
+                  {new Date(post.frontmatter.date).toLocaleDateString(
+                    "en-US",
+                    dateOptions,
+                  )}
+                </p>
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </main>
+</Layout>
+<Footer />
