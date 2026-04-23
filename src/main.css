@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+:root {
+    --font-mono: 'Comic Code Ligatures', 'Roboto Mono', 'Iosevka', SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+            "Courier New", monospace;
+}
+
 body {
     background-color: white;
     color: black;
@@ -8,6 +13,10 @@ body {
 
 *::selection {
 	@apply bg-blue-400 text-white;
+}
+
+.post {
+    @apply underline text-blue-700 font-mono
 }
 
 img {
