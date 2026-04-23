@@ -7,10 +7,16 @@ import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://fgclue.nl",
+  site: "https://fgclue-site.netlify.app", // will be changed when i stop being lazy
 
   vite: {
     plugins: [tailwindcss()],
+  },
+
+  markdown: {
+    shikiConfig: {
+      theme: "github-light"
+    }
   },
 
   integrations: [sitemap()],
