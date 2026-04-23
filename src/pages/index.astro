@@ -11,9 +11,9 @@ import StorekitLogo from "../assets/logos/storekit.png";
 
 import ClueLogo from "../assets/logobl.png";
 import Tag from "../components/Tag.astro";
-import LinkedImageTag from "../components/tags/LinkedImageTag.astro";
+import InactiveTag from "../components/tags/InactiveTag.astro";
 import ProjectBar from "../components/tags/ProjectBar.astro";
-import ImageTag from "../components/tags/ImageTag.astro";
+import LinkedTag from "../components/tags/LinkedTag.astro";
 ---
 
 <Layout>
@@ -23,7 +23,7 @@ import ImageTag from "../components/tags/ImageTag.astro";
       <div>
         <Image
           src={ClueLogo}
-          alt="Clue Logo. Pixelated mirrored T with missing bottom pixel."
+          alt="Clue Logo. Pixelated mirrored lower case T with missing bottom pixel."
           class="border-2 border-gray-300 aspect-square w-24 h-24"
           loading="eager"
           width="144"
@@ -65,38 +65,36 @@ import ImageTag from "../components/tags/ImageTag.astro";
 
     <div>
       <h1 class="text-2xl">Projects</h1>
-      <p class="flex flex-col gap-px">
-        <ProjectBar
-          >Apps: <LinkedImageTag
-            text="Podnative"
-            url="https://biitle.nl/apps/podnative/"
-            img={PodnativeLogo}
-            alt="Podnative Logo. Pole with outlined semicircles."
-          />
-          <ImageTag
-            text="Jot"
-            url="https://biitle.nl/apps/jot/"
-            img={JotLogo}
-            alt="Jot Logo. Two lines of the same size with one smaller line."
-          /></ProjectBar
-        >
-        <ProjectBar
-          >Desktop: <LinkedImageTag
-            text="Storekit"
-            url="https://github.com/fgclue/storekit"
-            img={StorekitLogo}
-            alt="Storekit Logo. Two shopping bags."
-          />
-        </ProjectBar>
-        <ProjectBar class="flex gap-1"
-          >Web: <LinkedImageTag
-            text="Outclock"
-            url="https://outclock.xyz"
-            img={OutclockLogo}
-            alt="Outclock Logo. Alarm clock."
-          /></ProjectBar
-        >
-      </p>
+      <!-- Projects: ppddvv, Podnative, Jot
+Experiments: Crossaint
+Open source: Espresso
+Shell: xkcd.sh
+Side-projects: Storekit
+Inactive: FluidServer [2025-2026], Outclock [2026] -->
+      <ProjectBar>
+        Projects: 
+        <Tag text="ppddvv" />
+        <LinkedTag text="Podnative" url="https://biitle.nl/apps/podnative/" />
+        <Tag text="Jot" />
+      </ProjectBar>
+      <ProjectBar>
+        Experiments: 
+        <LinkedTag text="Crossaint" url="https://github.com/fgclue2/Crossaint/" />
+        <LinkedTag text="xkcd.sh" url="https://github.com/fgclue2/xkcd.sh/" />
+      </ProjectBar>
+      <ProjectBar>
+        Open source: 
+        <LinkedTag text="Espresso" url="https://github.com/fgclue/Espresso/" />
+      </ProjectBar>
+      <ProjectBar>
+        Side-projects
+        <LinkedTag text="Storekit" url="https://github.com/fgclue/storekit/" />
+      </ProjectBar>
+      <ProjectBar>
+        Inactive:
+        <InactiveTag text="FluidServer" year="2025-2026" />
+        <InactiveTag text="Outclock" year="2026" />
+      </ProjectBar>
     </div>
   </main>
   <Footer />
