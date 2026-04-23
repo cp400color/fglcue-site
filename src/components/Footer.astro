@@ -2,14 +2,18 @@
 import { Image } from "astro:assets";
 
 import GithubLogo from "../assets/logos/github.svg";
+import RSSLogo from "../assets/logos/rss.svg";
 
 const year = new Date().getFullYear();
 ---
 
 <footer class="flex flex-col justify-center items-center gap-0.5 w-full text-center pt-12 text-gray-900">
-  <div class="flex gap-px">
+  <div class="flex gap-1">
     <a href="https://github.com/fgclue" class="w-fit">
       <Image src={GithubLogo} alt="GitHub" class="w-8 h-8" loading="eager" />
+    </a>
+    <a href="/rss.xml" class="w-fit">
+      <Image src={RSSLogo} alt="GitHub" class="w-8 h-8" loading="eager" />
     </a>
   </div>
   © {year} Clue
