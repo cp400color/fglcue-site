@@ -4,6 +4,8 @@ import Tag from "../Tag.astro";
 const { text, url = "" } = Astro.props;
 ---
 
-<a href={url}>
-  <Tag text={text} />
-</a>
+<p class="m-0 p-0 flex">
+  <a href={url} class="m-0 p-0 border-0">
+    <Tag text={text} />
+  </a>
+</p>
