@@ -1,9 +1,0 @@
----
-import ImageTag from "./ImageTag.astro";
-
-const { text, url = "", img, alt = "Logo" } = Astro.props;
----
-
-<a href={url} class="h-5.5" style="font-size:0;">
-  <ImageTag text={text} img={img} alt={alt} />
-</a>

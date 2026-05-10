@@ -4,11 +4,6 @@ import Footer from "../components/Footer.astro";
 import Navbar from "../components/nav/Navbar.astro";
 import Layout from "../layout/Layout.astro";
 
-import JotLogo from "../assets/logos/jot.svg";
-import PodnativeLogo from "../assets/logos/podnative.svg";
-import OutclockLogo from "../assets/logos/outclock.png";
-import StorekitLogo from "../assets/logos/storekit.png";
-
 import ClueLogo from "../assets/logobl.png";
 import Tag from "../components/Tag.astro";
 import InactiveTag from "../components/tags/InactiveTag.astro";
@@ -65,17 +60,11 @@ import LinkedTag from "../components/tags/LinkedTag.astro";
 
     <div>
       <h1 class="text-2xl">Projects</h1>
-      <!-- Projects: ppddvv, Podnative, Jot
-Experiments: Crossaint
-Open source: Espresso
-Shell: xkcd.sh
-Side-projects: Storekit
-Inactive: FluidServer [2025-2026], Outclock [2026] -->
       <ProjectBar>
         Projects: 
         <Tag text="ppddvv" />
         <LinkedTag text="Podnative" url="https://biitle.nl/apps/podnative/" />
-        <Tag text="Jot" />
+        <Tag text="Lightswitch for Toggl" />
       </ProjectBar>
       <ProjectBar>
         Experiments: 
@@ -85,15 +74,17 @@ Inactive: FluidServer [2025-2026], Outclock [2026] -->
       <ProjectBar>
         Open source: 
         <LinkedTag text="Espresso" url="https://github.com/fgclue/Espresso/" />
+        <LinkedTag text="Podsync" url="https://github.com/fgclue/Podsync/" />
       </ProjectBar>
       <ProjectBar>
-        Side-projects
+        Side-projects:
         <LinkedTag text="Storekit" url="https://github.com/fgclue/storekit/" />
       </ProjectBar>
       <ProjectBar>
         Inactive:
         <InactiveTag text="FluidServer" year="2025-2026" />
         <InactiveTag text="Outclock" year="2026" />
+        <InactiveTag text="Jot" year="2026" />
       </ProjectBar>
     </div>
   </main>
