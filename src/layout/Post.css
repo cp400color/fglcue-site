@@ -35,6 +35,22 @@ article {
     }
     
     a {
-        @apply underline text-blue-700 font-mono
+        @apply underline text-blue-700
+    }
+
+    li::before {
+        content: '· ';
+        font-weight: bolder;
+        font-size: 20px;
+        line-height: 0px;
+        padding-right: 4px;
+        color: lightslategray;
+    }
+    li li {
+        @apply pl-6;
+    }
+
+    code {
+        @apply bg-neutral-100/50 px-2 py-0.5 rounded-sm;
     }
 }
