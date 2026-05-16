@@ -14,7 +14,7 @@ const allPosts = Object.values(import.meta.glob("./*.mdx", { eager: true }));
 allPosts.sort((a: any, b: any) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
 ---
 
-<Layout title="Blog · Clue", description="New posts every second", metaTitle="Clue's Blog">
+<Layout title="Experiments · Clue", description="Some small things", metaTitle="Experiments - Clue">
   <Navbar />
   <main class="md:w-2xl gap-4 flex flex-col">
     <div class="flex flex-col gap-8">
