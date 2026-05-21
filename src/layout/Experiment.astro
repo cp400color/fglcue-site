@@ -1,9 +1,33 @@
 ---
+import Footer from "../components/Footer.astro";
 import Navbar from "../components/nav/Navbar.astro";
-import Layout from "./Layout.astro";
+import Layout from "../layout/Layout.astro";
+import './Post.css'
+
+const { frontmatter } = Astro.props;
+
+const dateOptions: object = {
+	year: "numeric",
+	month: "long",
+	day: "numeric",
+};
+
+const formattedDate = new Date(frontmatter.date).toLocaleDateString("en-US", dateOptions);
 ---
 
-<Layout>
-    <Navbar />
-    <slot />
+<Layout title={frontmatter.title} metaTitle={frontmatter.title + " - Clue's Blog"}>
+  <Navbar />
+  <main class="md:w-2xl gap-4 flex flex-col px-2">
+    <h1 class="text-5xl">{frontmatter.title}</h1>
+    <div class="leading-snug flex gap-2">
+        <p class="text-sm">{frontmatter.author}</p>
+        <span>·</span>
+        <time class="text-sm">{formattedDate}</time>
+    </div>
+    <article>
+        <slot />
+    </article>
+  </main>
+  <p class="hidden invisible">THIS WEBPAGE DOES NOT WORK IN READER MODE</p>
+  <Footer />
 </Layout>

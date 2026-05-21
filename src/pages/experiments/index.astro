@@ -10,7 +10,7 @@ const dateOptions: object = {
   month: "long",
   day: "numeric",
 };
-const allPosts = Object.values(import.meta.glob("./*.mdx", { eager: true }));
+const allPosts = Object.values(import.meta.glob("./**.mdx", { eager: true }));
 allPosts.sort((a: any, b: any) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
 ---
 
