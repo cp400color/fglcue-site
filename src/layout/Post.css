@@ -50,9 +50,6 @@ article {
         @apply pl-6;
     }
 
-    code {
-        @apply bg-neutral-100/50 px-2 py-0.5 rounded-sm;
-    }
 
     p {
         padding-bottom: 0.5lh;
