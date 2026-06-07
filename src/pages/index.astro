@@ -9,6 +9,7 @@ import Tag from "../components/Tag.astro";
 import InactiveTag from "../components/tags/InactiveTag.astro";
 import ProjectBar from "../components/tags/ProjectBar.astro";
 import LinkedTag from "../components/tags/LinkedTag.astro";
+import Link from "../components/Link.astro";
 ---
 
 <Layout>
@@ -27,13 +28,38 @@ import LinkedTag from "../components/tags/LinkedTag.astro";
       </div>
       <div>
         <h1 class="text-2xl">Clue</h1>
-        <p>
-          I am a full-stack developer based in Brazil. Right now, I am working
-          on developing software for my business biitle.nl. I've been developing
-          software since around 2024.
-        </p>
+        <p>Hey! It's me! Just a guy with some <Link href="/blog">blog posts</Link>, some <Link href="https://github.com/fgclue">projects</Link> and some <Link href="https://biitle.nl">web</Link><Link href="/">sites</Link></p>
         <p class="text-gray-900 text-sm">Timezone: GMT-3 · Brasília Time</p>
+        <p class="text-gray-900 text-sm">Phone: Who still uses phones??</p>
+        <p class="text-gray-900 text-sm">Electronic mail: Click on Contact above</p>
+        <p class="text-gray-900 text-sm" id="favorite-thing">Favorite superlative: best</p>
       </div>
+      <script defer>
+        items = [
+          "Favorite superlative: best",
+          "Favorite CSS property: field-sizing",
+          "Favorite programming language: Kotlin",
+          "Favorite image file format: WEBP",
+          "Favorite top level domain: .org",
+          "Size of my .gradle folder: 9.5G",
+          "Favorite filesystem: btrfs",
+          "Favorite monospace font: Comic Code Ligatures",
+          "Favorite sans-serif font: Inter",
+          "Favorite round font: SF Pro Rounded",
+          "Favorite source code license: MIT",
+          "Code editors I have installed: 6",
+          "Favorite task manager: Todoist",
+          "Favorite color: 422nm",
+          "Least favorite scripting language: Batch",
+          "Favorite bodging program: AutoHotKey",
+          "Favorite element: 119 Ununennium",
+          "Favorite Unicode Character: ︘ PRESENTATION FORM FOR VERTICAL RIGHT WHITE LENTICULAR BRAKCET",
+          "CPU Brand: AMD",
+          "Favorite code contest: IOCCC",
+          "Installed GNOME extensions: 15"
+        ]
+        document.getElementById("favorite-thing").textContent = items[items.length - 1 - Math.floor(Math.random() * items.length)]
+      </script>
     </div>
 
     <div id="portfolio"></div>
@@ -41,20 +67,10 @@ import LinkedTag from "../components/tags/LinkedTag.astro";
     <div>
       <h1 class="text-2xl">Skills</h1>
       <p>
-        I am familiar with <Tag text="Python" />, <Tag text="Rust" /> and <Tag
-          text="Kotlin"
-        />. Regarding the web, I am familiar with <Tag text="HTML" />, <Tag
-          text="JavaScript"
-        /> and <Tag text="TypeScript" />,
-        <Tag text="CSS" /> and JSX-like frameworks such as <Tag text="React" /> and
-        <Tag text="Astro" />.
+        I am familiar with <Tag text="Kotlin" />, <Tag text="Python" />, <Tag text="Rust" /> and also <Tag text="TypeScript" />. I am also trying to learn how to use <Tag text="C" /> and my <Link href="https://youtu.be/cFtymODJEjs">favorite interpreted langauge</Link>, <Tag text="C++" />.
       </p>
       <p>
-        I also know how to use tools like <Tag text="Docker" />, <Tag
-          text="Vite"
-        />, <Tag text="Figma" />, <Tag text="Git" /> and <Tag
-          text="Insomnia REST"
-        />.
+        Also, I am familiar with tools such as <Tag text="Git" />, <Tag text="Docker" /> and <Tag text="Figma" />
       </p>
     </div>
 
@@ -64,7 +80,7 @@ import LinkedTag from "../components/tags/LinkedTag.astro";
         Projects: 
         <Tag text="ppddvv" />
         <LinkedTag text="Podnative" url="https://biitle.nl/apps/podnative/" />
-        <Tag text="Lightswitch for Toggl" />
+        <LinkedTag text="Lightswitch for Toggl" url="https://biitle.nl/apps/lightswitch/" />
       </ProjectBar>
       <ProjectBar>
         Experiments: 
