@@ -23,6 +23,22 @@ const {
     {noindex && <meta name="robots" content="noindex">}
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="shortcut icon" href={BiitleLogo.src} type="image/x-icon" />
+    <script>
+      document.querySelectorAll('pre')
+        .forEach((element) => {
+          element.addEventListener('click', (event) => {
+          if (event.detail === 3) {
+            const selection = window.getSelection();
+            const range = document.createRange();
+            if (selection!!.rangeCount > 0) {
+            selection!!.removeAllRanges();
+          }
+            range.selectNode(element);
+            selection!!.addRange(range)
+          }
+        })
+      })
+    </script>
   </head>
   <body class="scroll-smooth flex flex-col justify-center items-center px-2">
     <slot />
