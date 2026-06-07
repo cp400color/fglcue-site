@@ -17,7 +17,7 @@ const formattedDate = new Date(frontmatter.date).toLocaleDateString("en-US", dat
 
 <Layout title={frontmatter.title} metaTitle={frontmatter.title + " - Clue's Blog"}>
   <Navbar />
-  <main class="md:w-2xl gap-4 flex flex-col px-2">
+  <main class="w-screen px-8 md:w-2xl gap-4 flex flex-col md:px-2">
     <h1 class="text-5xl">{frontmatter.title}</h1>
     <div class="leading-snug flex gap-2">
         <p class="text-sm">{frontmatter.author}</p>

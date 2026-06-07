@@ -35,10 +35,10 @@ allPosts.sort((a: any, b: any) => Date.parse(b.frontmatter.date) - Date.parse(a.
       <ol class="gap-1 py-0 my-0">
         {
           allPosts.map((post: any) => (
-            <li class="flex flex-row gap-2 px-2 py-1 hover:bg-gray-50">
-              <a href={post.url} class="flex gap-2">
-                <p>{post.frontmatter.title}</p>
-                <p class="text-gray-600">
+            <li class="flex flex-row gap-2 px-2 py-1 max-md:w-full hover:bg-gray-50">
+              <a href={post.url} class="flex gap-2 max-md:w-full">
+                <p class="max-md:w-full">{post.frontmatter.title}</p>
+                <p class="text-gray-600 text-right md:text-left">
                   {new Date(post.frontmatter.date).toLocaleDateString(
                     "en-US",
                     dateOptions,
