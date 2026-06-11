@@ -1,7 +1,7 @@
 ---
 layout: ../../layout/Post.astro
 title: 'Obsidian to Todoist: How I do my shopping list'
-date: 2026-06-10 21:22:33 -0300
+date: 2026-06-10 9:22:33 -0300
 author: 'Clue'
 ---
 
