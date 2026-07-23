@@ -1,0 +1,96 @@
+---
+import Footer from "../../components/Footer.astro";
+import Navbar from "../../components/nav/Navbar.astro";
+import Layout from "../../layout/Layout.astro";
+
+export const title = "Electron Configuration Calculator";
+export const description = "Calculates electron configurations for you";
+
+import elements from './elements.json'
+---
+<Layout>
+    <Navbar />
+    <main class="w-screen px-8 md:w-2xl gap-4 flex flex-col md:px-2">
+        <div id="periodic-table" class="grid grid-cols-18 grid-rows-9">
+            {elements.map((element) => 
+                <div title={element.name + " (A = " + element.mass + ")"} class={element.color + " " + (element.Z == 0 ? "invisible" : "visible") + " border aspect-square cursor-pointer text-center " + element.border}>
+                    <h2 class="text-sm">{element.Z}</h2>
+                    <h1 class="text-xl">{element.symbol}</h1>
+                </div>
+            )}
+        </div>
+
+        <input id="electrons" placeholder="e⁻">
+        <button class="btn" id="calculate">Calculate configuration</button>
+
+        <h1 class="text-center text-2xl" id="output">...</h1>
+    </main>
+    <script defer is:inline>
+        const electronInput = document.getElementById("electrons")
+        const calculateButton = document.getElementById("calculate")
+        const output = document.getElementById("output")
+
+        function electronConfiguration(atomicNumber) {
+            const orbitals = [
+                ["1s", 2],
+                ["2s", 2],
+                ["2p", 6],
+                ["3s", 2],
+                ["3p", 6],
+                ["4s", 2],
+                ["3d", 10],
+                ["4p", 6],
+                ["5s", 2],
+                ["4d", 10],
+                ["5p", 6],
+                ["6s", 2],
+                ["4f", 14],
+                ["5d", 10],
+                ["6p", 6],
+                ["7s", 2],
+                ["5f", 14],
+                ["6d", 10],
+                ["7p", 6]
+            ];
+
+            let electrons = atomicNumber;
+            const config = [];
+
+            for (const [orbital, capacity] of orbitals) {
+                if (electrons <= 0) break;
+
+                const fill = Math.min(electrons, capacity);
+                config.push([orbital, fill]);
+                electrons -= fill;
+            }
+
+            // Known exceptions
+            const exceptions = {
+                24: "1s2 2s2 2p6 3s2 3p6 4s1 3d5",
+                29: "1s2 2s2 2p6 3s2 3p6 4s1 3d10",
+                41: "1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s1 4d4",
+                42: "1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s1 4d5",
+                44: "1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s1 4d7",
+                45: "1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s1 4d8",
+                46: "1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 4d10",
+                47: "1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s1 4d10",
+                78: "1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2 4d10 5p6 6s1 4f14 5d9",
+                79: "1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2 4d10 5p6 6s1 4f14 5d10"
+            };
+
+            if (exceptions[atomicNumber]) {
+                return exceptions[atomicNumber];
+            }
+
+            return config.map(([orbital, count]) => `${orbital}${count}`).join(" ");
+        }
+
+        function recalculateActions() {
+            output.textContent = calculateConfiguration(electronInput.value ?? 0)
+        }
+
+        calculateButton.addEventListener("click", recalculateActions)
+        electronInput.addEventListener("input", recalculateActions)
+    </script>
+    <Footer />
+</Layout>

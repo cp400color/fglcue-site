@@ -32,3 +32,7 @@ img {
 input, textarea, select {
     @apply border border-gray-500 my-1 px-2 py-1 rounded-sm
 }
+
+.btn {
+    @apply border border-gray-200 bg-gray-200 my-1 px-2 py-1 rounded-sm hover:cursor-pointer
+}

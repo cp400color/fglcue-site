@@ -5,7 +5,7 @@ import Navbar from "../../components/nav/Navbar.astro";
 import Layout from "../../layout/Layout.astro";
 import ClueLogo from "../../assets/logobl.png";
 
-const allPosts = Object.values(import.meta.glob("./*/**.astro", { eager: true }));
+const allPosts = Object.values(import.meta.glob("./**.astro", { eager: true }));
 ---
 
 <Layout title="Tools · Clue", description="Some small tools", metaTitle="Tools - Clue">
