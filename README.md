@@ -5,10 +5,11 @@ This is the repo that stores my personal site. It uses [Astro](https://astro.bui
 ## Contributing
 
 1. Fork this repo and clone it.
-2. Start your web server and run `npm run dev`
-3. Commit your work: `git commit -am "Message"`
-4. Push your work: `git push origin your/branch`
-5. Now, create a PR on the branch you modified.
+2. `npm i` then `npm run dev`
+3. Do your work
+4. Commit your work: `git commit -am "Message"`
+5. Push your work: `git push origin your/branch`
+6. Now, create a PR on the branch you modified.
 
 ## Licensing
 
