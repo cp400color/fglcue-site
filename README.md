@@ -12,7 +12,7 @@ This is the repo that stores my personal site. It uses [Astro](https://astro.bui
 
 ## Licensing
 
-- Website source code: MIT license (aka Expat, X11, or whatever the fuck you call it. SPDX: `MIT`)
-- All blog content and experiments: Creative Commons Zero v1.0 Universal (`CC0-1.0`)
+- Website source code, experiments: MIT license (aka Expat, X11, or whatever the fuck you call it. SPDX: `MIT`)
+- All blog content: Creative Commons Zero v1.0 Universal (`CC0-1.0`)
 
 While CC0 does not require attribution, it would be nice if you did add attribution if you use my blog posts.
